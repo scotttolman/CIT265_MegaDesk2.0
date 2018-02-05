@@ -1,0 +1,14 @@
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\bin\Debug\MegaDesk-3-scotttolman.exe.config
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\bin\Debug\MegaDesk-3-scotttolman.exe
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\bin\Debug\MegaDesk-3-scotttolman.pdb
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk-3-scotttolman.csprojResolveAssemblyReference.cache
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.AddQuote.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.DisplayQuote.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.MainMenu.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.Properties.Resources.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.SearchQuotes.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk_3_scotttolman.ViewAllQuotes.resources
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk-3-scotttolman.csproj.GenerateResource.Cache
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk-3-scotttolman.csproj.CoreCompileInputs.cache
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk-3-scotttolman.exe
+C:\Users\scott\source\repos\MegaDesk-3-scotttolman\MegaDesk-3-scotttolman\obj\Debug\MegaDesk-3-scotttolman.pdb
