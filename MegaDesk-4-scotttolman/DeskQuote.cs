@@ -28,6 +28,8 @@ namespace MegaDesk_4_scotttolman
         public const float RUSH27 = 40;
 
         Desk deskObject;
+        string firstName;
+        string lastName;
         float oversize;
         float oversizeCost;
         float drawerCost;
@@ -36,8 +38,10 @@ namespace MegaDesk_4_scotttolman
         float rushCost = 0;
         float totalCost;
 
-        DeskQuote(Desk _deskObject)
+        public DeskQuote(string firstName, string lastName, Desk _deskObject)
         {
+            this.firstName = firstName;
+            this.lastName = lastName;
             deskObject = _deskObject;
             oversize = OVERSIZE - (deskObject.getDepth() * deskObject.getWidth());
             oversizeCost = calcOversizeCost();
@@ -46,7 +50,21 @@ namespace MegaDesk_4_scotttolman
             totalCost = calcTotalCost();
         }
 
-        private float calcOversizeCost()
+        public string getFirst() { return firstName; }
+
+        public string getLast() { return lastName; }
+
+        public int getRush() { return rush; }
+
+        // only optional field setter
+        public void addRush(int days)
+        {
+            rush = days;
+            rushCost = calcRushCost();
+            calcTotalCost();
+        }
+
+        public float calcOversizeCost()
         {
             float oversize = ((OVERSIZE - (deskObject.getDepth() * deskObject.getWidth())) * OVERSIZE_COST);
             if (oversize > 0)
@@ -55,13 +73,13 @@ namespace MegaDesk_4_scotttolman
                 return 0;
         }
 
-        private float calcDrawerCost()
+        public float calcDrawerCost()
         {
             float cost = (deskObject.getDrawers() * DRAWER_COST);
             return cost;
         }
 
-        private float calcSurfaceCost()
+        public float calcSurfaceCost()
         {
             switch ((int)deskObject.getSurface())
             {
@@ -80,13 +98,13 @@ namespace MegaDesk_4_scotttolman
             }
         }
 
-        private float calcTotalCost()
+        public float calcTotalCost()
         {
             float cost = BASE_PRICE + oversizeCost + drawerCost + surfaceCost + rushCost;
             return cost;
         }
 
-        private float calcRushCost()
+        public float calcRushCost()
         {
             float cost = 0;
             if (oversize < 1000)
@@ -117,13 +135,6 @@ namespace MegaDesk_4_scotttolman
                     cost = RUSH27;
             }
             return cost;
-        }
-
-        public void addRush(int days)
-        {
-            rush = days;
-            rushCost = calcRushCost();
-            calcTotalCost();
         }
     }
 }

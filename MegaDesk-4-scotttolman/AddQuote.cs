@@ -15,6 +15,9 @@ namespace MegaDesk_4_scotttolman
         public AddQuote()
         {
             InitializeComponent();
+
+            List<material> materialList = Enum.GetValues(typeof(material)).Cast<material>().ToList();
+            materialBox.DataSource = materialList;
         }
 
         private void ShowMainMenu_Click(object sender, EventArgs e)
@@ -49,6 +52,30 @@ namespace MegaDesk_4_scotttolman
             {
                 depthError.Visible = false;
             }
+        }
+
+        private void ShowQuote_Click(object sender, EventArgs e)
+        {
+            Desk desk = new Desk(float.Parse(widthBox.Text), float.Parse(depthBox.Text), int.Parse(drawerBox.Text),
+                (material)materialBox.SelectedItem);
+
+            DeskQuote quote = new DeskQuote(firstNameBox.Text, lastNameBox.Text, desk);
+
+            if ((string)rushBox.SelectedItem != "No Rush")
+            {
+                int rushVal;
+                string rush = (string)rushBox.SelectedItem;
+                int.TryParse(rush, out rushVal);
+                quote.addRush(rushVal);
+            }
+
+            
+            DisplayQuote displayQuote = new DisplayQuote(desk, quote)
+            {
+                Tag = this
+            };
+            displayQuote.Show(this);
+            Hide();
         }
     }
 }

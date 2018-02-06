@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.viewCancel = new System.Windows.Forms.Button();
+            this.quoteList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // viewCancel
@@ -41,11 +42,21 @@
             this.viewCancel.UseVisualStyleBackColor = true;
             this.viewCancel.Click += new System.EventHandler(this.viewCancel_Click);
             // 
+            // quoteList
+            // 
+            this.quoteList.Location = new System.Drawing.Point(58, 43);
+            this.quoteList.Name = "quoteList";
+            this.quoteList.Size = new System.Drawing.Size(522, 236);
+            this.quoteList.TabIndex = 1;
+            this.quoteList.UseCompatibleStateImageBehavior = false;
+            this.quoteList.View = System.Windows.Forms.View.List;
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 361);
+            this.Controls.Add(this.quoteList);
             this.Controls.Add(this.viewCancel);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
@@ -56,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Button viewCancel;
+        private System.Windows.Forms.ListView quoteList;
     }
 }

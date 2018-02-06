@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_4_scotttolman
 {
+    public enum material { oak, laminate, pine, rosewood, veneer };
+
     public class Desk
     {
-        public enum material { oak, laminate, pine, rosewood, veneer };
-
         private float width;
         private float depth;
         private int drawers;
