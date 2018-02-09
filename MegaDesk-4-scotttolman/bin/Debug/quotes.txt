@@ -5,3 +5,4 @@ ScottTolman,2/5/2018 12:00:00 AM,24,24,laminate,0,No Rush,724
 ScottTolman,2/5/2018 12:00:00 AM,24,24,pine,0,No Rush,674
 ScottTolman,2/5/2018 12:00:00 AM,24,24,rosewood,0,No Rush,924
 ScottTolman,2/5/2018 12:00:00 AM,24,24,veneer,0,No Rush,749
+ScottTolman,2/5/2018 12:00:00 AM,36,24,pine,2,No Rush,486
