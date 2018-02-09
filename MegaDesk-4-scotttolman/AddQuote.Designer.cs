@@ -117,10 +117,9 @@
             // 
             this.rushBox.FormattingEnabled = true;
             this.rushBox.Items.AddRange(new object[] {
-            "No Rush",
-            "7 Days",
-            "5 Days",
-            "3 Days"});
+            "3",
+            "5",
+            "7"});
             this.rushBox.Location = new System.Drawing.Point(329, 244);
             this.rushBox.Name = "rushBox";
             this.rushBox.Size = new System.Drawing.Size(121, 21);

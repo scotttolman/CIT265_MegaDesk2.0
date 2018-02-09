@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,8 +60,22 @@ namespace MegaDesk_4_scotttolman
         // only optional field setter
         public void addRush(int days)
         {
-            rush = days;
-            rushCost = calcRushCost();
+            string[,] rushList = getRushOrder();
+            if (days == 2)
+                rush = 3;
+            else if (days == 1)
+                rush = 5;
+            else
+                rush = 7;
+            int tier;
+            if (oversize < 0)
+                tier = 0;
+            else if (oversize < 1000)
+                tier = 1;
+            else
+                tier = 2;
+            //float.TryParse(rushList[days][tier], out rushCost);
+            rushCost = float.Parse(rushList[days, tier]);
             calcTotalCost();
         }
 
@@ -104,37 +119,35 @@ namespace MegaDesk_4_scotttolman
             return cost;
         }
 
-        public float calcRushCost()
+        public string[,] getRushOrder()
         {
-            float cost = 0;
-            if (oversize < 1000)
+            string[,] rushList = new string[3, 3];
+            try
             {
-                if (rush == 3)
-                    cost = RUSH03;
-                else if (rush == 5)
-                        cost = RUSH05;
-                else if (rush == 7)
-                        cost = RUSH07;
-            }
-            else if (oversize >= 1000 && oversize <= 2000)
+                StreamReader reader = new StreamReader("rushOrderPrices.txt");
+                string line = reader.ReadToEnd();
+                string[] lineArray = new string[9];
+                //for (int i = 0; i < 9; i++)
+                //{
+                //    lineArray = line.Split();
+                //}
+                lineArray = line.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                if (lineArray != null)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            rushList[i,j] = lineArray[(i * 3) + j];
+                        }
+                    }
+                }
+            } catch (Exception e)
             {
-                if (rush == 3)
-                    cost = RUSH13;
-                else if (rush == 5)
-                    cost = RUSH15;
-                else if (rush == 7)
-                    cost = RUSH17;
+                Console.WriteLine(e.Message);
             }
-            else
-            {
-                if (rush == 3)
-                    cost = RUSH23;
-                else if (rush == 5)
-                    cost = RUSH25;
-                else if (rush == 7)
-                    cost = RUSH27;
-            }
-            return cost;
+
+            return rushList;
         }
     }
 }

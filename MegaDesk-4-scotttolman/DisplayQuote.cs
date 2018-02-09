@@ -13,28 +13,12 @@ namespace MegaDesk_4_scotttolman
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote(Desk desk, DeskQuote deskQuote)
+        public DisplayQuote(string json)
         {
             InitializeComponent();
-
-            quoteName.Text = deskQuote.getFirst() + deskQuote.getLast();
-            width.Text = desk.getWidth().ToString();
-            depth.Text = desk.getDepth().ToString();
-            surface.Text = desk.getSurface().ToString();
-            drawers.Text = desk.getDrawers().ToString();
-            int rush = deskQuote.getRush();
-            if (rush == 0)
-            {
-                rushLabel.Text = "No Rush";
-            }
-            else
-            {
-                rushLabel.Text = rush.ToString() + " days";
-            }
-            cost.Text = deskQuote.calcTotalCost().ToString();
-
-            StreamWriter writer = new StreamWriter("quotes.txt", true);
-            writer.WriteLine(quoteName.Text + ',' +  DateTime.Today + ',' + width.Text + ',' +  depth.Text + ',' +  surface.Text + ',' +  drawers.Text + ',' +  rushLabel.Text + ',' +  cost.Text);
+                        
+            StreamWriter writer = new StreamWriter("quotes.json", true);
+            writer.WriteLine(json);
             writer.Close();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,16 +62,19 @@ namespace MegaDesk_4_scotttolman
 
             DeskQuote quote = new DeskQuote(firstNameBox.Text, lastNameBox.Text, desk);
 
-            if ((string)rushBox.SelectedItem != "No Rush")
+            if (rushBox.Text != "0")
             {
-                int rushVal;
-                string rush = (string)rushBox.SelectedItem;
-                int.TryParse(rush, out rushVal);
-                quote.addRush(rushVal);
+                if (rushBox.Text == "7")
+                    quote.addRush(2);
+                else if (rushBox.Text == "5")
+                    quote.addRush(1);
+                else
+                    quote.addRush(0);
             }
 
+            string json = JsonConvert.SerializeObject(desk);
             
-            DisplayQuote displayQuote = new DisplayQuote(desk, quote)
+            DisplayQuote displayQuote = new DisplayQuote(json)
             {
                 Tag = this
             };
