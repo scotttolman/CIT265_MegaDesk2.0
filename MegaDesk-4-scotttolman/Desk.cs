@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,13 @@ namespace MegaDesk_4_scotttolman
 
     public class Desk
     {
+        [JsonProperty]
         private float width;
+        [JsonProperty]
         private float depth;
+        [JsonProperty]
         private int drawers;
+        [JsonProperty]
         private material surface;
 
         public Desk(float width, float depth, int drawers, material surface)
